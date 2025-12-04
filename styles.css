@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #123456;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.score {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.placar1,
+.placar2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid #fff;
+  padding: 5px 17px;
+  background: #ccc;
+}
+
+.score button {
+  padding: 8px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.tabuleiro {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 0px;
+  border: none;
+  border-color: #fff;
+  margin-bottom: 30px;
+}
+
+.celula {
+  background: none;
+  color: #222;
+  border: 5px solid #000;
+  font-size: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Remove top border */
+.celula:nth-child(1),
+.celula:nth-child(2),
+.celula:nth-child(3) {
+  border-top: none;
+}
+
+/* Remove bottom border */
+.celula:nth-child(7),
+.celula:nth-child(8),
+.celula:nth-child(9) {
+  border-bottom: none;
+}
+
+/* Remove left border */
+.celula:nth-child(1),
+.celula:nth-child(4),
+.celula:nth-child(7) {
+  border-left: none;
+}
+
+/* Remove right border */
+.celula:nth-child(3),
+.celula:nth-child(6),
+.celula:nth-child(9) {
+  border-right: none;
+}
+
+.pecas {
+  width: 100%;
+  display: flex;
+  gap: 450px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pecas1 > i,
+.pecas2 > i {
+  padding-right: 20px;
+}
+
+/* preview inside cells while hovering (semi-transparent) */
+.celula .preview {
+  opacity: 0.45;
+  font-size: 36px;
+  pointer-events: none;
+}
